@@ -1,0 +1,7 @@
+<ul class="thumbnails">
+  <% for site in @sites: %>
+    <li class="span4 site-thumbnail">
+      <img class="thumbnail" src="<%= site.latest_capture %>" />
+    </li>
+  <% end %>
+</ul>
