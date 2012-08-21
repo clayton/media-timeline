@@ -22,7 +22,6 @@ ssh_options[:forward_agent] = true
 ssh_options[:user] = "deploy"
 ssh_options[:password] = "d3pl0y"
 
-set :use_sudo, true
 set :deploy_to, '/home/deploy/apps/media-timeline'
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
@@ -36,7 +35,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 
   # task :scrape do
