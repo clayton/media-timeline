@@ -13,16 +13,15 @@ set :repository,  "git@github.com:clayton/media-timeline"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "beta.themediatimeline.com"                          # Your HTTP server, Apache/etc
-role :app, "beta.themediatimeline.com"                          # This may be the same as your `Web` server
-role :db,  "beta.themediatimeline.com", :primary => true # This is where Rails migrations will run
+role :web, "themediatimeline.com"                          # Your HTTP server, Apache/etc
+role :app, "themediatimeline.com"                          # This may be the same as your `Web` server
+role :db,  "themediatimeline.com", :primary => true # This is where Rails migrations will run
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 ssh_options[:user] = "deploy"
-ssh_options[:password] = "d3pl0y"
 
-set :use_sudo, false
+set :use_sudo, true
 set :deploy_to, '/home/deploy/apps/media-timeline'
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
