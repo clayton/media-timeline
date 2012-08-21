@@ -31,7 +31,15 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   # process :resize_to_limit => [270, -1]
   version :thumb do
-    process :resize_to_limit => [290, -1]
+    process :above_the_fold
+  end
+
+  def above_the_fold
+    manipulate! do |image|
+      image.resize "290x-1"
+      image.crop "290x350+0x0"
+      image
+    end
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

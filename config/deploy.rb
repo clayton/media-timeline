@@ -20,6 +20,7 @@ role :db,  "themediatimeline.com", :primary => true # This is where Rails migrat
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 ssh_options[:user] = "deploy"
+ssh_options[:password] = "d3pl0y"
 
 set :use_sudo, true
 set :deploy_to, '/home/deploy/apps/media-timeline'

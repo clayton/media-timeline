@@ -6,3 +6,11 @@ CarrierWave.configure do |config|
   }
   config.fog_directory  = "media-timeline-#{Rails.env.downcase}"
 end
+
+module MiniMagick
+  class CommandBuilder
+    def escape_string(value)
+      "\"#{value}\""
+    end
+  end
+end
