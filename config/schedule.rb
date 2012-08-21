@@ -9,7 +9,7 @@ env :PATH, ENV['PATH']
 # set :output, "/path/to/my/cron_log.log"
 #
 every 1.hours do
-  command 'bin/rake sites:capture --silent'
+  rake "sites:capture"
 end
 #
 # every 4.days do
