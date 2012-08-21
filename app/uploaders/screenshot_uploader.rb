@@ -34,6 +34,10 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
     process :above_the_fold
   end
 
+  version :preview do
+    process :resize_to_limit => [960, -1]
+  end
+
   def above_the_fold
     manipulate! do |image|
       image.resize "290x-1"

@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
   def index
-    @sites = Site.order("updated_at").includes(:captures)
+    @sites = Site.order("name").includes(:captures)
   end
 end

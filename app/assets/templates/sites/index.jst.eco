@@ -2,8 +2,10 @@
   <% for site in @sites: %>
     <li class="span4">
       <div>
-        <img class="thumbnail" src="<%= site.latest_capture %>" />
-        <h3><%= site.name %></h3>
+        <h2><%= site.name %></h2>
+        <div class="thumbnail">
+          <img src="<%= site.latest_capture %>" />
+        </div>
       </div>
     </li>
   <% end %>
