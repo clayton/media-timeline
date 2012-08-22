@@ -17,6 +17,7 @@ role :web, "themediatimeline.com"                          # Your HTTP server, A
 role :app, "themediatimeline.com"                          # This may be the same as your `Web` server
 role :db,  "themediatimeline.com", :primary => true # This is where Rails migrations will run
 
+set :use_sudo, false
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 ssh_options[:user] = "deploy"
