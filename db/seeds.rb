@@ -3,7 +3,6 @@ sites = [
   {:name => "USA Today", :url => "http://www.usatoday.com/"},
   {:name => "The New York Times", :url => "https://www.nytimes.com/"},
   {:name => "Los Angeles Times", :url => "http://www.latimes.com/"},
-  {:name => "San Jose Mercury News", :url => "http://www.mercurynews.com/"},
   {:name => "The Washington Post", :url => "http://www.washingtonpost.com/"},
   {:name => "Daily News", :url => "http://www.nydailynews.com/"},
   {:name => "New York Post", :url => "http://www.nypost.com/"},
@@ -34,13 +33,11 @@ sites = [
   {:name => "Daily Caller", :url => "http://www.dailycaller.com/"},
   {:name => "Big Hollywood/Brietbart", :url => "http://www.breitbart.com/breitbart-tv/"},
   {:name => "NewsBusters", :url => "http://newsbusters.org/"},
-  {:name => "AceOfSpades HQ", :url => "http://ace.mu.nu/"},
   {:name => "NBC News", :url => "http://www.nbcnews.com"},
   {:name => "ABC News", :url => "http://abcnews.go.com"},
   {:name => "CBS News", :url => "http://www.cbsnews.com"},
   {:name => "Fox News", :url => "http://www.foxnews.com"},
-  {:name => "CNN", :url => "http://www.cnn.com"},
-  {:name => "Google News", :url => "http://news.google.com"}
+  {:name => "CNN", :url => "http://www.cnn.com"}
 ]
 
 Site.delete_all
