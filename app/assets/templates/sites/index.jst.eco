@@ -1,12 +1,17 @@
-<ul class="thumbnails">
-  <% for site in @sites: %>
+<div class="time-marker">
+  <%= @data.pretty_date %>
+</div>
+<div class="container">
+  <ul class="thumbnails">
+  <% for site in @data.sites: %>
     <li class="span4">
       <div>
         <h2><%= site.name %></h2>
         <div class="thumbnail">
-          <img src="<%= site.latest_capture %>" />
+          <img src="http://placehold.it/290x350" />
         </div>
       </div>
     </li>
   <% end %>
-</ul>
+  </ul>
+</div>

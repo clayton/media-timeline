@@ -6,5 +6,5 @@ class MediaTimeline.Views.SitesIndex extends Backbone.View
     @.collection.on 'reset', @.render, @
 
   render: ->
-    context = sites: @.collection.toJSON()
-    $("#main .container").html @template context
+    context = data: @.collection.toJSON()
+    $("#main").html @template context
