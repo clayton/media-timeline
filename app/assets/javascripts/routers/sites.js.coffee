@@ -4,7 +4,6 @@ class MediaTimeline.Routers.Sites extends Backbone.Router
   }
 
   initialize: ->
-    console.log("initialize")
     @.list = new MediaTimeline.Collections.Sites()
     @.list.fetch()
 

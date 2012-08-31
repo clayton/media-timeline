@@ -4,9 +4,8 @@ window.MediaTimeline =
   Views: {}
   Routers: {}
   init: ->
-    console.log "init"
-    new MediaTimeline.Routers.Sites
-    Backbone.history.start()
+    new MediaTimeline.Routers.Captures
+    Backbone.history.start({pushState: true})
 
 $(document).ready ->
   MediaTimeline.init()

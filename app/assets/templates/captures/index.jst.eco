@@ -1,0 +1,15 @@
+<div class="container">
+  <ul class="thumbnails">
+  <% for capture in @captures: %>
+    <li class="span4">
+      <div>
+        <h2><%= capture.site_name %></h2>
+        <div class="thumbnail">
+          <img width="290" height="350" src="<%= capture.screenshot_src %>" />
+          <%= capture.hour_captured %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+</div>
