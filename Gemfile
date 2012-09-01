@@ -13,6 +13,7 @@ gem 'mini_magick'
 gem 'fog'
 gem 'whenever'
 gem 'execjs'
+gem 'therubyracer'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
