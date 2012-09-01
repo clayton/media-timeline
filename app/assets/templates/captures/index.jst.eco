@@ -5,7 +5,7 @@
       <div>
         <h2><%= capture.site_name %></h2>
         <div class="thumbnail">
-          <img width="290" height="350" src="<%= capture.screenshot_src %>" />
+          <img alt="screenshot of <%= capture.site_name %>" title="Screenshot of <%= capture.site_name %>" width="290" height="350" src="<%= capture.screenshot_src %>" />
         </div>
       </div>
     </li>
