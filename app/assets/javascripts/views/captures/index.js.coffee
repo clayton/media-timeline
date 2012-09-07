@@ -6,5 +6,5 @@ class MediaTimeline.Views.CapturesIndex extends Backbone.View
     @.collection.on 'reset', @.render, @
 
   render: ->
-    context = captures: @.collection.toJSON()
+    context = data: @.collection.toJSON()
     $("#main").html @template context

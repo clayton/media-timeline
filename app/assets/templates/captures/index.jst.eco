@@ -1,14 +1,17 @@
-<div class="container">
-  <ul class="thumbnails">
-  <% for capture in @captures: %>
-    <li class="span4">
-      <div>
-        <h2><%= capture.site_name %></h2>
-        <div class="thumbnail">
-          <img alt="screenshot of <%= capture.site_name %>" title="Screenshot of <%= capture.site_name %>" width="290" height="350" src="<%= capture.screenshot_src %>" />
+<% for capture_group in @data: %>
+  <%= capture_group.date %>
+  <div class="container">
+    <ul class="thumbnails">
+    <% for capture in capture_group.captures:  %>
+      <li class="span4">
+        <div>
+          <h2><%= capture.site_name %></h2>
+          <div class="thumbnail">
+            <img alt="screenshot of <%= capture.site_name %>" title="Screenshot of <%= capture.site_name %>" width="290" height="350" src="<%= capture.screenshot_src %>" />
+          </div>
         </div>
-      </div>
-    </li>
-  <% end %>
-  </ul>
-</div>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
