@@ -23,7 +23,7 @@ if (phantom.args.length < 3 || phantom.args.length > 4) {
                 });
                 fs.write(html_out, page_source, "w");
                 phantom.exit();
-            }, 500);
+            }, 1000);
         }
     });
 }
