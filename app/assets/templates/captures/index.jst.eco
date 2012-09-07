@@ -1,5 +1,7 @@
 <% for capture_group in @data: %>
-  <%= capture_group.date %>
+  <div class="capture-date">
+    <%= capture_group.date %>
+  </div>
   <div class="container">
     <ul class="thumbnails">
     <% for capture in capture_group.captures:  %>
