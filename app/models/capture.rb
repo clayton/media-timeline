@@ -8,6 +8,10 @@ class Capture < ActiveRecord::Base
   mount_uploader :screenshot, ScreenshotUploader
   mount_uploader :page_source, PageSourceUploader
 
+  def to_param
+    "#{id}-#{year_captured}-#{month_captured}-#{day_captured}-#{hour_captured}"
+  end
+
 private
   def set_time_fragments
     self.year_captured  = Time.now.year

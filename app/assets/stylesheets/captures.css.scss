@@ -3,20 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background:#333;
-}
-
-.thumbnail{
-  background:#fff;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .capture-date{
-  float: left;
-  width: 225px;
-  color:#fff;
-  font-size:2em;
-  line-height:1.2em;
-  text-align:right;
-  margin-top:30px;
-  font-family: 'Open Sans', sans-serif;
+  h2{
+    border-bottom:medium solid #222;
+    margin-bottom:1em;
+  }
 }
+

@@ -12,6 +12,9 @@ class MediaTimeline.Routers.Captures extends Backbone.Router
   index: ->
     @.listView.collection.fetch()
 
+  show: ->
+    alert("show")
+
   date:(year, month, day, hour) ->
     @.listView.collection.fetch(
         data:

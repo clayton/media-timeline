@@ -1,6 +1,10 @@
 MediaTimeline::Application.routes.draw do
-  resources :sites
+  resources :sites do
+    resources :captures
+  end
+
   resources :captures
+
 
   match "/:from_year-:from_month-:from_day-:from_hour/through/:to_year-:to_month-:to_day-:to_hour" => "captures#index",
     :from_year  => /\d{4}/,
