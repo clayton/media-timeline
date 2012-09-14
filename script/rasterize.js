@@ -16,7 +16,9 @@ if (phantom.args.length < 3 || phantom.args.length > 4) {
             console.log('Unable to load the address!');
         } else {
             window.setTimeout(function () {
-                page.sendEvent("click", 1,1);
+                window.setTimeout(function(){
+                    page.sendEvent("click", 1,1);
+                }, 1000)
                 page.render(png_out);
                 page_source = page.evaluate(function () {
                     return document.getElementsByTagName('html')[0].innerHTML
