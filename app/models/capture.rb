@@ -12,6 +12,34 @@ class Capture < ActiveRecord::Base
     "#{id}-#{year_captured}-#{month_captured}-#{day_captured}-#{hour_captured}"
   end
 
+  def site_name
+    "#{site.name}"
+  end
+
+  def capture_datetime
+    "#{created_at.strftime("%A %B %e, %Y at %l%p %Z")}"
+  end
+
+  def show_url
+    "/#{year_captured}-#{month_captured}-#{day_captured}-#{hour_captured}/#{site.seo_name}/#{id}"
+  end
+
+  def previous_hour
+    by_hour(created_at - 1.hour)
+  end
+
+  def next_hour
+    by_hour(created_at + 1.hour)
+  end
+
+  def by_hour(hour)
+    site.captures.where(:year_captured => hour.year).
+                  where(:month_captured => hour.month).
+                  where(:day_captured => hour.day).
+                  where(:hour_captured => hour.hour).
+                  first
+  end
+
 private
   def set_time_fragments
     self.year_captured  = Time.now.year

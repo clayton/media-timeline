@@ -6,17 +6,23 @@ class MediaTimeline.Routers.Captures extends Backbone.Router
   }
 
   initialize: ->
-    @.listView = new MediaTimeline.Views.CapturesIndex
-      collection: new MediaTimeline.Collections.Captures
+    @route(/^[\d,-]+\/[a-z,-]+\/(\d+)$/, "show")
+    @collection = new MediaTimeline.Collections.Captures
 
   index: ->
-    @.listView.collection.fetch()
+    @listView = new MediaTimeline.Views.CapturesIndex
+      collection: @collection
+    @listView.collection.fetch()
 
-  show: ->
-    alert("show")
+  show:(id) ->
+    @captureView = new MediaTimeline.Views.Capture
+      model: new MediaTimeline.Models.Capture(id: id)
+    @captureView.model.fetch()
 
   date:(year, month, day, hour) ->
-    @.listView.collection.fetch(
+    @listView = new MediaTimeline.Views.CapturesIndex
+      collection: @collection
+    @listView.collection.fetch(
         data:
           year: year
           month: month
@@ -25,7 +31,9 @@ class MediaTimeline.Routers.Captures extends Backbone.Router
       )
 
   through:(from_year, from_month, from_day, from_hour, to_year, to_month, to_day, to_hour) ->
-    @.listView.collection.fetch(
+    @listView = new MediaTimeline.Views.CapturesIndex
+      collection: @collection
+    @listView.collection.fetch(
         data:
           from_year: from_year
           from_month: from_month

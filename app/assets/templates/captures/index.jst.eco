@@ -15,7 +15,7 @@
         <div>
           <h3><%= capture.site_name %></h3>
           <div class="thumbnail">
-            <img alt="screenshot of <%= capture.site_name %>" title="Screenshot of <%= capture.site_name %>" width="290" height="350" src="<%= capture.thumbnail_src %>" />
+            <a href="<%= capture.show_url %>"><img alt="screenshot of <%= capture.site_name %>" title="Screenshot of <%= capture.site_name %>" width="290" height="350" src="<%= capture.thumbnail_src %>" /></a>
           </div>
         </div>
       </li>

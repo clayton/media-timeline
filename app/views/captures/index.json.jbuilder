@@ -3,7 +3,7 @@ json.array!(@captures) do |json, grouped_captures|
   json.captures grouped_captures.last do |json, capture|
     json.thumbnail_src capture.screenshot.url(:thumb)
     json.screenshot_src capture.screenshot.url
-    json.capture_path site_capture_path(capture.site, capture)
+    json.show_url capture.show_url
     json.site_name capture.site.name
     json.hour_captured capture.hour_captured
   end

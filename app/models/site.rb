@@ -3,7 +3,11 @@ class Site < ActiveRecord::Base
   has_many :captures
 
   def to_param
-    "#{id}-#{name.downcase.gsub(/\s/, "-")}"
+    "#{id}-#{seo_name}"
+  end
+
+  def seo_name
+    name.downcase.gsub(/\s/, "-").gsub(/\//,"-")
   end
 
   def latest_capture_thumbnail
