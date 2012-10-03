@@ -37,6 +37,7 @@ class Capture < ActiveRecord::Base
                   where(:month_captured => hour.month).
                   where(:day_captured => hour.day).
                   where(:hour_captured => hour.hour).
+                  where(["id <> ?", id]).
                   first
   end
 

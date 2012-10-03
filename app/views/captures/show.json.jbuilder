@@ -10,5 +10,5 @@ json.next_hour do |next_hour|
 end
 json.previous_hour do |previous_hour|
   previous_hour.thumbnail_url @capture.previous_hour.screenshot_url(:thumb) if @capture.previous_hour
-  previous_hour.show_url @capture.previous_hour.show_url if if @capture.previous_hour
+  previous_hour.show_url @capture.previous_hour.show_url if @capture.previous_hour
 end
