@@ -1,0 +1,21 @@
+<div class="container capture-detail">
+  <div class="row">
+    <div class="span9">
+      <h3><%= @capture.site_name %> on <%= @capture.capture_datetime %></h3>
+      <img src="<%= @capture.screenshot_url %>" alt="Screenshot of <%= @capture.site_name %> at <%= @capture.capture_datetime %>" />
+    </div>
+    <div class="span3">
+			<h3>More From...</h3>
+			<p><%= link_to(@capture.capture_datetime, dated_captures_url(capture_url_params(@capture))) %></p>
+      <% if @capture.previous_hour %>
+        <h3>Previous Hour</h3>
+        <a href="<%= @capture.previous_hour.show_url %>"><img src="<%= @capture.previous_hour.screenshot_url(:thumb) %>" /></a>
+      <% end %>
+
+      <% if @capture.next_hour %>
+        <h3>Next Hour</h3>
+        <a href="<%= @capture.next_hour.show_url %>"><img src="<%= @capture.next_hour.screenshot_url(:thumb) %>" /></a>
+      <% end %>			
+    </div>
+  </div>
+</div>

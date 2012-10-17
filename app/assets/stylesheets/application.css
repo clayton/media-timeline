@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+ 
+ header{
+	 background:#444;
+	 padding:1.5em 0;
+	 margin-bottom:20px;
+ }
+ 
+ header h1{
+	 width:960px;
+	 margin:0 auto;
+	 color:white;
+ }

@@ -21,11 +21,12 @@ MediaTimeline::Application.routes.draw do
     :day   => /\d{1,2}/,
     :hour  => /\d{1,2}/
 
-  match "/:year-:month-:day-:hour" => "captures#index",
+  match "/:year-:month-:day-:hour" => "captures#index", 
+    :as => "dated_captures",
     :year  => /\d{4}/,
     :month => /\d{1,2}/,
     :day   => /\d{1,2}/,
     :hour  => /\d{1,2}/
 
-  root :to => 'home#index'
+  root :to => 'captures#index'
 end
